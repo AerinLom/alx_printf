@@ -9,5 +9,8 @@
 
 int _printf(const char *format, ...);
 void intConversion(int list_num, char *list_buff);
+int char_func(va_list list_words);
+int string_func(va_list list_words);
+int integer_func(va_list list_words);
 
 #endif
