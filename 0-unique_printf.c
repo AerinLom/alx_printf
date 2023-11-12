@@ -6,26 +6,26 @@
  */
 
 
-int _printf(const char *format, ...)								// declares function printf and stores argument //
+int _printf(const char *format, ...)								/* declares function printf and stores argument */
 
 {
-	int tally_character = 0;								// our initialized var will count characters //	
+	int tally_character = 0, length_Of_Str;							/* our initialized var will count characters */	
 
-	va_list words;										// This will store list of variable arguments //
+	va_list words;										/* This will store list of variable arguments */
 
-	va_start(words, format);								// starts with parameter format //
+	va_start(words, format);								/* starts with parameter format */
 
-	while (*format != '\0')									// loops until the end of format //
+	while (*format != '\0')									/* loops until the end of format */
 	{
 		if (*format == '%')
 
 		{
-			format++;								// proceeds to new character in the format string //
+			format++;								/* proceeds to new character in the format string */
 
 			switch (*format)
 
 			{
-				case '%':							// specifies the code area in which the action will be performed //
+				case '%':							/* specifies the code area in which the action will be performed */
 
 					write(1, "%", 1);
 
@@ -63,6 +63,38 @@ int _printf(const char *format, ...)								// declares function printf and stor
 					break;
 
 				}
+				 case 'i':
+                                        {
+                                                int d_int = va_arg(words, int);
+                                                char id_buff[12];
+                                                intConversion(d_int, id_buff);
+                                                length_Of_Str = 0;
+
+                                                while (id_buff[length_Of_Str] != '\0')
+                                                {
+                                                        length_Of_Str++;
+                                                }
+                                                write(1, id_buff, length_Of_Str);
+                                                tally_character += length_Of_Str;
+                                                break;
+                                        }
+				
+				case 'd':
+
+                                        {
+                                                int d_int = va_arg(words, int);
+                                                char id_buff[12];
+                                                intConversion(d_int, id_buff);
+                                                length_Of_Str = 0;
+
+                                                while (id_buff[length_Of_Str] != '\0')
+                                                {
+                                                        length_Of_Str++;
+                                                }
+                                                write(1, id_buff, length_Of_Str);
+                                                tally_character += length_Of_Str;
+                                                break;
+                                        }
 
 				default:
 
@@ -85,9 +117,8 @@ int _printf(const char *format, ...)								// declares function printf and stor
 
 	}
 
-	va_end(words);										// arguments stop being processed //
+	va_end(words);										/* arguments stop being processed */
 
-	return tally_character;									// returns total count of characters //
+	return tally_character;									/* returns total count of characters */
 
 }
-
