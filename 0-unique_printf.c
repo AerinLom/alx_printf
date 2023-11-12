@@ -12,7 +12,9 @@ int _printf(const char *format, ...)
 	int tally_character = 0;								/* This stores variable argument list */
 	va_list list_words;
 												/* starts with parameter format */
-	va_start(list_words, format);								/* loops until the end of format */
+	va_start(list_words, format);
+	if (format == NULL)
+	write(1, "error", 1);											/* loops until the end of format */
 	while (*format != '\0')
 	{
 		if (*format == '%')
