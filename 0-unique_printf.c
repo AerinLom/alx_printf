@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	va_list list_words;
 												/* starts with parameter format */
 	va_start(list_words, format);								/* loops until the end of format */
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 	while (*format != '\0')
 	{
 		if (*format == '%')
