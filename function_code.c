@@ -8,6 +8,11 @@ int char_func(va_list list_words)
 {
 	int tally_character = 0;
 	char c = (char)va_arg(list_words, int);
+	
+	if (c == NULL)
+	{
+		return (-1);
+	}
 
 	write(1, &c, 1);
 
@@ -24,6 +29,11 @@ int string_func(va_list list_words)
 {
 	int tally_character = 0;
 	const char *string = va_arg(list_words, const char *);
+
+	if (string == NULL)
+	{
+		return (-1);
+	}
 
 	while (*string != '\0')
 
@@ -49,6 +59,11 @@ int integer_func(va_list list_words)
 	char id_buff[12];
 
 	intConversion(d_int, id_buff);
+
+	if (d_int == NULL)
+	{
+		return (-1);
+	}
 
 	while (id_buff[length_Of_Str] != '\0')
 	{
