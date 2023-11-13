@@ -9,7 +9,7 @@ int char_func(va_list list_words)
 	int tally_character = 0;
 	char c = (char)va_arg(list_words, int);
 	
-	if (c == NULL)
+	if (!c)
 	{
 		return (-1);
 	}
@@ -30,7 +30,7 @@ int string_func(va_list list_words)
 	int tally_character = 0;
 	const char *string = va_arg(list_words, const char *);
 
-	if (string == NULL)
+	if (!string)
 	{
 		return (-1);
 	}
@@ -60,7 +60,7 @@ int integer_func(va_list list_words)
 
 	intConversion(d_int, id_buff);
 
-	if (d_int == NULL)
+	if (!d_int)
 	{
 		return (-1);
 	}
