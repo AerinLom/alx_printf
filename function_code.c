@@ -8,7 +8,7 @@ int char_func(va_list list_words)
 {
 	int tally_character = 0;
 	char c = (char)va_arg(list_words, int);
-	
+
 	if (!c)
 	{
 		return (-1);
