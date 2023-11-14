@@ -46,4 +46,5 @@ void intConversion(int list_num, char *list_buff)
 	}
 
 	list_buff[array_value] = '\0';							/* Outputs the null character */
+
 }
