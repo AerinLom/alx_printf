@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format_spec_cases(&format, list_words, &tally_character);
+			switch_case(&format, list_words, &tally_character);
 		}
 		else
 		{

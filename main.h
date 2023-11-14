@@ -14,6 +14,6 @@ void intConversion(int list_num, char *list_buff);
 int char_func(va_list list_words);
 int string_func(va_list list_words);
 int integer_func(va_list list_words);
-void format_spec_cases(const char **format, va_list list_words, int *tally_character);
+void switch_case(const char **format, va_list list_words, int *tally_character);
 
 #endif
