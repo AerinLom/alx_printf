@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					write(1, format - 1, 1);				/* prints just the % on edge case */
+					tally_character++;
 					break;
 			}
 		}
