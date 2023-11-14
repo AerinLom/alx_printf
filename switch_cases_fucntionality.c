@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
-  * switch_case - handles format specifier switch statement
+  * swtch_case - handles format specifier switch statement
   *@format: pointer to string passed in as argumnt
   *@list_words: This holds the variable args
   *@tally_character: pointer to tally character
   */
 
-void switch_case(const char **format, va_list list_words, int *tally_character)
+void swtch_case(const char **format, va_list list_words, int *tally_character)
 {
 	(*format)++;
 
