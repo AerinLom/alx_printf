@@ -15,6 +15,7 @@ int char_func(va_list list_words)
 
 	return (1);
 }
+
 /**
  * string_func - This maintains structure and execution of string
  * @list_words: This holds the variable args
@@ -24,7 +25,20 @@ int string_func(va_list list_words)
 {
 	int tally_character = 0;
 	const char *string = va_arg(list_words, const char *);
+	if (string == NULL)
+	{
+		string = "(null)";
+		while (*string != '\0')
+		{
+			write(1, string, 1);
 
+			tally_character++;
+
+			string++;
+		}
+		return (tally_character);
+	}
+	else
 	while (*string != '\0')
 
 	{
@@ -37,6 +51,7 @@ int string_func(va_list list_words)
 
 	return (tally_character);
 }
+
 /**
  * integer_func - This maintains structure and execution of integer
  * @list_words: This holds the variable args
