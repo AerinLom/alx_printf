@@ -37,8 +37,6 @@ int _printf(const char *format, ...)
 					tally_character += integer_func(list_words);
 					break;
 				default:
-					write(1, format - 1, 1);				/* prints just the % on edge case */
-					tally_character++;
 					break;
 			}
 		}
