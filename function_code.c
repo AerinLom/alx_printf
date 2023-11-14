@@ -11,7 +11,7 @@ int char_func(va_list list_words)
 
 	if (!c)
 	{
-		return (-1);
+		return (-3);
 	}
 	else
 	write(1, &c, 1);
@@ -76,7 +76,7 @@ int integer_func(va_list list_words)
 		length_Of_Str++;
 
 		if (length_Of_Str > 12)
-			return (-1);
+			return (-4);
 	}
 	write(1, id_buff, length_Of_Str);
 
