@@ -19,31 +19,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format++;								/* proceeds to new character in the format string */
-			switch (*format)
-			{									/* specifies code area that is performed */
-				case '%':
-					write(1, "%", 1);
-					tally_character++;
-					break;
-				case 'c':
-					tally_character += char_func(list_words);
-					break;
-				case 's':
-					tally_character += string_func(list_words);
-					break;
-				case 'i':
-				case 'd':
-					tally_character += integer_func(list_words);
-					break;
-				default:
-					break;
-			}
+			format_spec_cases(&format, list_words, &tally_character);
 		}
 		else
 		{
-			write(1, format, 1);
-			tally_character++;
+			tally_character += write(1, format, 1);
 		}
 		format++;
 		}
