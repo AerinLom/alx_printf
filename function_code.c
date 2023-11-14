@@ -15,6 +15,44 @@ int char_func(va_list list_words)
 
 	return (1);
 }
+int reverse_func(va_list list_words)
+{
+	int tally_character = 0;
+	const char *string_flipped = va_arg(list_words, const char *);
+	char saved[]; 
+	int flipped; 
+
+	if (string_flipped == NULL)
+	{
+		string_flipped = "(null)";
+		while (*string_flipped != '\0')
+		{
+			 write(1, string_flipped, 1);
+
+			 tally_character++;
+
+			 string_flipped++;
+		}
+		return (tally_character);
+
+	}
+	else
+	while (*string_flipped != '\0')
+	
+	{
+		saved = write(1, string_flipped, 1);
+
+		tally_character++;
+
+		string_flipped++;
+	}
+	for (flipped = 0; flipped <= tally_character; flipped++);
+	{
+
+
+
+	return (tally_character);
+}
 
 /**
  * string_func - This maintains structure and execution of string
