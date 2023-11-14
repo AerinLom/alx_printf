@@ -15,41 +15,34 @@ int char_func(va_list list_words)
 
 	return (1);
 }
+
+/**
+  *reverse_func - reverses a string
+  *@list_words: string to be reversed
+  *Return: reversed string
+  */
+
 int reverse_func(va_list list_words)
 {
 	int tally_character = 0;
-	const char *string_flipped = va_arg(list_words, const char *);
-	char saved[]; 
-	int flipped; 
+	int flipped;
+	const char *string_flp = va_arg(list_words, const char *);
 
-	if (string_flipped == NULL)
+	if (string_flp == NULL)
+		string_flp = "(null)";
+
+	while (*string_flp != '\0')
 	{
-		string_flipped = "(null)";
-		while (*string_flipped != '\0')
-		{
-			 write(1, string_flipped, 1);
-
-			 tally_character++;
-
-			 string_flipped++;
-		}
-		return (tally_character);
-
-	}
-	else
-	while (*string_flipped != '\0')
-	
-	{
-		saved = write(1, string_flipped, 1);
-
 		tally_character++;
-
-		string_flipped++;
+		string_flp++;
 	}
-	for (flipped = 0; flipped <= tally_character; flipped++);
+
+	string_flp--;
+
+	for (flipped = tally_character - 1; flipped >= 0; flipped--)
 	{
-
-
+		write(1, &string_flp[flipped], 1);
+	}
 
 	return (tally_character);
 }
@@ -59,6 +52,7 @@ int reverse_func(va_list list_words)
  * @list_words: This holds the variable args
  * Return: Returns number of char
  */
+
 int string_func(va_list list_words)
 {
 	int tally_character = 0;

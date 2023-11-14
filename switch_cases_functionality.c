@@ -26,7 +26,8 @@ void swtch_case(const char **format, va_list list_words, int *tally_character)
 		case 'i':
 		case 'd':
 			(*tally_character) += integer_func(list_words);
-		case 'r': 
+			break;
+		case 'r':
 			(*tally_character) += reverse_func(list_words);
 			break;
 		default:
