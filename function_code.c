@@ -9,6 +9,11 @@ int char_func(va_list list_words)
 	int tally_character = 0;
 	char c = (char)va_arg(list_words, int);
 
+	if (!c)
+	{
+		return (-1);
+	}
+	else
 	write(1, &c, 1);
 
 	tally_character++;
@@ -69,6 +74,9 @@ int integer_func(va_list list_words)
 	while (id_buff[length_Of_Str] != '\0')
 	{
 		length_Of_Str++;
+
+		if (length_Of_Str > 12)
+			return (-1);
 	}
 	write(1, id_buff, length_Of_Str);
 
